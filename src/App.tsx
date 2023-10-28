@@ -1,27 +1,25 @@
-import React from 'react';
+import { Outlet } from 'react-router-dom';
+
 import './App.scss';
+import './fonts/Mont-Regular.otf';
+import './fonts/Mont-Bold.otf';
+import './fonts/Mont-SemiBold.otf';
 
-interface Props {
-  onClick: () => void;
-}
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 
-export const Provider: React.FC<Props> = React.memo(
-  ({ onClick, children }) => (
-    <button
-      type="button"
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  ),
+const App = () => (
+  <div className="App">
+    <Header />
+
+    <main className="main-content">
+      <div className="main-content__container">
+        <Outlet />
+      </div>
+    </main>
+
+    <Footer />
+  </div>
 );
 
-export const App: React.FC = () => {
-  return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>
-        <TodoList />
-      </Provider>
-    </div>
-  );
-};
+export default App;

@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     '@mate-academy/eslint-config-react-typescript',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
   ],
   rules: {
     // React
@@ -20,6 +21,8 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/ban-types': 0,
     '@typescript-eslint/semi': ['error'],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
   },
   parser: '@typescript-eslint/parser',
   plugins: [
